@@ -1,0 +1,10 @@
+services:
+  weekplan:
+    build: .
+    ports: ["4173:4173"]
+    environment:
+      API_TOKEN: ${API_TOKEN:-}
+    volumes: [weekplan-data:/data]
+    restart: unless-stopped
+volumes:
+  weekplan-data:
